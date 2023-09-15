@@ -1,0 +1,73 @@
+.seguros-bg {
+  background: var(--cor-11);
+}
+
+.seguros {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  gap: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+#seguros .seguros {
+  padding-top: 0px;
+}
+
+.seguros h2 {
+  grid-column: 1/-1; /*Estou dizendo que o elemento do grid irá de ponta a ponta*/
+}
+
+.seguros-item {
+  background: var(--cor-12);
+  padding: 32px 32px 32px 60px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-radius: 4px;
+}
+
+.seguros-item h3 {
+  margin-bottom: 40px
+}
+
+.seguros-item span {
+  grid-column: 2;
+  display: block;
+  text-align: right;
+}
+
+.seguros-item ul {
+  grid-column: 1/-1;
+  margin-bottom: 32px;
+}
+
+.seguros-item li + li{  /* Aqui estou dizendo que é para dicionar margin-top somente aos li que for filho direto de outro li. O primeiro li da lista não é selecionado justamente por ele não ser filho direto de outra li e sim da ul.*/
+  margin-top: 20px;
+}
+
+.seguros-item li {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.seguros-item li::before {
+  content:"";
+  display: inline-block;
+  width:13px;
+  height: 9px;
+  background-image: url("../../img/icones/lista.svg");
+  position: absolute;
+  left: -22px;
+}
+
+.seguros-item a {
+  grid-column: 1/-1;
+}
+
+@media (max-width:800px) {
+  .seguros {
+    grid-template-columns: 1fr;
+  }
+}
